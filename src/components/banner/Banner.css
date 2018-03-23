@@ -1,0 +1,30 @@
+.banner-background {
+    background: linear-gradient(to bottom right, #75e3e3,  #06dad6, #06d4d0);
+    height: 820px;
+    color: #ffffff;
+}
+
+.column-half {
+  width: 50%
+}
+
+.banner-flex {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+  margin: 0;
+}
+
+.banner-caption {
+  width: 100%;
+  display: inline-block;
+  transition: 0.5s;
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: 1px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
