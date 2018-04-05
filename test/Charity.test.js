@@ -19,11 +19,11 @@ beforeEach( async () => {
   .deploy({ data: compiledFactory.bytecode })
   .send({ 
     from: accounts[0], //New contract address
-    gas: '1000000'});
+    gas: '3000000'});
 
   await factory.methods.createCharity().send({
     from: accounts[0],
-    gas: '1000000'});
+    gas: '3000000'});
 
   //destructuring from an array
   [charityAddress] = await factory.methods.getDeployedCharity().call();
@@ -42,38 +42,39 @@ describe('Charity Smart Contract', () => {
     // console.log('Factory Address:', factory.options.address, 'Charity Address:', charity.options.address);
   });
 
-  it('Allows people contribute to charity', async () => {
-    try {
-    await charity.methods
-    .contribute().send({ //Create instance of a new address
-      value: web3.utils.toWei('1', 'ether'),
-      from: accounts[0]
-    });
-  } catch (err) {
-    console.log('BALANCE', balance = await web3.eth.getBalance(accounts[0]));
-    console.log(err);
-  }
-  });
+  // it('Allows people contribute to charity', async () => {
+  //   try {
+  //   await charity.methods
+  //   .contribute().send({ //Create instance of a new address
+  //     value: web3.utils.toWei('1', 'ether'),
+  //     from: accounts[0]
+  //   });
+  // } catch (err) {
+  //   console.log('BALANCE', balance = await web3.eth.getBalance(accounts[0]));
+  //   console.log(err);
+  // }
+  // });
 
-  it('Allows users to donate and write messages', async () => {
-    await charity.methods
-    .donationMessage('I love you guys', 'Vince Howard', 100 )
-    .send({
-      from: accounts[0],
-      gas: '1000000'
-    });
+  // it('Allows users to donate and write messages', async () => {
+  //   await charity.methods
+  //   .donationMessage('I love you guys', 'Vince Howard', 100 )
+  //   .send({
+  //     from: accounts[0],
+  //     gas: '1000000'
+  //   });
 
-    // const donation = await charity.methods.donators(0).call();
-    // assert.equal('Hello World', donation.message);
-  });
+  //   const donation = await charity.methods.donators(0).call();
+  //   assert.equal('Hello World', donation.message);
+  // });
 
   it('When user contributes some amount of ether, charity count will go up by one', async () => {
       await charity.methods
-      .contribute().send({ //Create instance of a new address
+      .contributeMessage('I love you guys', 'Vince Howard', 100 ).send({ //Create instance of a new address
         value: web3.utils.toWei('1', 'ether'),
-        from: accounts[0]
+        from: accounts[0],
+        gas: '1000000'
       });
-      // count = await charity.methods.charityCount().call()
-      // assert.equal(count, 1);
+      count = await charity.methods.charityCount().call()
+      assert.equal(count, 1);
     });
 });

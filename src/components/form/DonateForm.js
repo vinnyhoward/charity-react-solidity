@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import Charity from '../../ethereum/charity';
+import charity from '../../ethereum/factory';
 import web3 from '../../ethereum/web3';
 import './DonateForm.css';
 
 export default class DonateForm extends Component {
   state = {
-      imgURL: '',
       name: '',
       description: '',
       recipient: '',
@@ -13,29 +12,47 @@ export default class DonateForm extends Component {
       loading: false,
       errorMessage: ''
   }
+  
+  // onSubmit = async event => {
+  //   event.preventDefault();
+  
+  //   this.setState({ 
+  //     loading: true,
+  //     errorMessage: ''
+  //   });
+  // try {
+  //   const accounts = await web3.eth.getAccounts();
+  //   await charity.methods.contribute().send({
+  //     from: accounts[0],
+  //     value: web3.utils.toWei(this.state.value, 'ether')
+  //   });
+  // } catch(err) {
+  //   this.setState({ errorMessage: err.message });
+  // }
+  // this.setState({ loading: false, value: '' });
+  // };
 
-  onSubmit = async event => {
-  event.preventDefault();
-
-  const charity = new Charity(this.props.address);
-  const { imgURL, name, description, recipient, value } = this.state
-
-  this.setState({
-    loading: true, errorMessage: ''
-  })
+  onDonateMessageSend = async event => {
+    event.preventDefault();
+    const { description, name, value } = this.state;
+  
+    this.setState({ 
+      loading: true,
+      errorMessage: ''
+    });
   try {
     const accounts = await web3.eth.getAccounts();
-    await charity.methods.createDonation( imgURL, name, description, recipient, web3.utils.toWei( value, 'ether' ))
+    await charity.methods.contributeMessage( description, name, web3.utils.toWei( value, 'ether' ) )
     .send({ 
       from: accounts[0],
       value: web3.utils.toWei(this.state.value, 'ether')
      })
-  } catch (err) {
-    this.setState({
-      errorMessage: err.message
-    })
+     console.log('Did it work');
+
+  } catch(err) {
+    this.setState({ errorMessage: err.message });
   }
-  this.setState({ loading: false })
+  this.setState({ loading: false, value: '' });
   }
 
   render() {
@@ -43,37 +60,17 @@ export default class DonateForm extends Component {
 <div className='form-background'>
   <div className='flex-forms'>
     <div className='form-align'>
-      {/*
-      <div className='form-caption'>Avatar</div> */}
     </div>
     <input 
-    placeholder='Upload any image' 
-    type='text' value={ this.state.imgURL } 
-    onChange={ event=> this.setState({ imgURL: event.target.value })}
-    ></input>
-    {/*
-    <div className='form-caption'>Name</div> */}
-    <input 
-    placeholder='Pick a nickname' 
+    placeholder='Whats your name?' 
     value={ this.state.name } 
     onChange={ event=> this.setState({ name: event.target.value })}
     ></input>
-    {/*
-    <div className='form-caption'>Message</div> */}
     <input 
-    placeholder='Write a sweet message' 
+    placeholder='Write an empowering message' 
     value={ this.state.description } 
     onChange={ event=> this.setState({ description: event.target.value })}
     ></input>
-    {/*
-    <div className='form-caption'>Address</div> */}
-    <input 
-    placeholder='Your eth address goes here' 
-    value={ this.state.recipient } 
-    onChange={ event=> this.setState({ recipient: event.target.value })}
-    ></input>
-    {/*
-    <div className='form-caption'>Amount</div> */}
     <input 
     placeholder='Donate some amount of Eth' 
     value={ this.state.value } 
@@ -82,7 +79,7 @@ export default class DonateForm extends Component {
     <button 
     type='button' 
     className='donate-button'
-    onClick={ this.onSubmit }
+    onClick={ this.onDonateMessageSend }
     >DONATE</button>
   </div>
 </div>

@@ -13,7 +13,6 @@ contract CharityFactory {
     }
 }
 
-
 contract Charity{
   event CharityEvent(
     address _from,
@@ -36,18 +35,15 @@ uint public charityCount;
       organization = creator;
     }
   
-
-    function contribute() public payable {
+    function contributeMessage(string message, string username, uint value) public payable {
       charityCount++;
-    }
-
-  function donationMessage(string message, string username, uint value) public {
-    emit CharityEvent(msg.sender, message, username, value);
+      
+        emit CharityEvent(msg.sender, message, username, value);
         Donator memory newDonator = Donator({
-         message: message,
-         username: username,
-         value: value
+        message: message,
+        username: username,
+        value: value
     });
         donators.push(newDonator);
-  }
+    }
 }

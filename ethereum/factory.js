@@ -4,7 +4,7 @@ import CharityCampaign from './build/Charity.json';
 //pre-configured instance for our contract
 const instance = new web3.eth.Contract(
   JSON.parse(CharityCampaign.interface),
-  '0x32A6b5A4bf2b34FA6Aa406ab8053826F67C328B9'
+  '0x3516f03f5f09729a3f9925a65a74ffe9ed1d9419'
 );
 
 export default instance;
