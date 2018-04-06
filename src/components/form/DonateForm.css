@@ -1,11 +1,15 @@
 .form-background {
   background: white;
-  border-radius: 10px;
-  margin-top: 110px;
-  margin-bottom: 110px;
+  /* margin-top: 110px;
+  margin-bottom: 110px; */
   height: 550px;
   width: 450px;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .flex-forms {
@@ -14,55 +18,102 @@
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: center;
-	align-items: center;
-  align-content: center;
-  padding-top: 70px;
+  padding-left: 50px;
 }
 
 .flex-forms input {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
   margin-bottom: 25px;
   margin-top: 5px;
   height: 45px;
   width: 350px;
-  background-color: #dfe6e9;
+  background-color: #ffffff;
   outline: none;
-  border: none;
-  /* box-shadow: 1px 1px 7.5px rgba(0, 0, 0, 0.15); */
+  border: 1px solid #ccc;
   padding-left: 20px;
-  font-size: 15px;
-  border-radius: 5px;
 }
 
-/* .form-align {
-  display: inline-block;
-  text-align: left;
-} */
+.flex-forms input:focus {
+  border: 3px solid #c0dfef;
+}
 
 .donate-button {
-  margin: 5px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
   width: 350px;
   height: 60px;
   background-color: #ff7675;
   border: none;
   outline: none;
   color: white;
-  font-size: 18px;
   transition: 0.5s;
-  font-weight: 700;
-  letter-spacing: 1px;
-  border-radius: 5px;
+  letter-spacing: 2px;
+  /* border-radius: 5px; */
   cursor: pointer;
 }
 
 .form-caption {
-  color: #b2bec3;
-  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 15px;
   transition: 0.5s;
   font-weight: 700;
   letter-spacing: 1px;
   border-radius: 5px;
-  text-align: left;
+  display: inline-block;
 }
+
+.form-header {
+  color: rgba(0, 0, 0, 0.75);
+  font-family: 'Source Serif Pro', serif;
+  font-size: 36px;
+  font-weight: 900;
+  padding: 20px;
+  padding-left: 50px;
+  padding-top: 35px;
+}
+
+.error-message {
+  color: red;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.empty {
+  height: 42px;
+}
+
+.modal-background {
+  z-index: 1;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 50px;
+  background: rgba(0, 0, 0, 0.50);
+}
+
+.hide {
+  display: none;
+}
+
+
+
+
+
+
+
+
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #b2bec3;
