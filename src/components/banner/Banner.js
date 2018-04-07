@@ -18,15 +18,14 @@ export default class Banner extends Component {
     return (
 <div className='banner-background'>
         <DonateForm 
-        clickOpen={this.state.modalOpen}
-        // onClose={this.clickOpenModal} 
+        clickOpen={this.state.modalOpen} 
+        onClose={this.clickOpenModal} 
         />
   <div className='main'>
     <div className='squeeze'>
       <div className='banner-flex'>
         <div className='column-half'>
         {/* <div className='banner-caption'>Join the cause and help others in need</div> */}
-
         <button 
         className='donate-button'
         onClick={ this.clickOpenModal }

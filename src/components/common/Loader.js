@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Loader.css';
 
-export default class Loader extends Component {
-  render() {
+ const Loader = () => {
     return (
       <div className='ring'>
-       Wait for it...
         <span></span>
       </div>
     )
-  }
 }
+
+export default Loader;

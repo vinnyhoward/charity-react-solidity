@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
 <div>
-  <NavigationBar />
+ <NavigationBar />
       <Banner />
   <div className='main'>
     <div className='squeeze'>

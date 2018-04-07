@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import charity from '../../ethereum/factory';
 import web3 from '../../ethereum/web3';
 import './DonateForm.css';
-import Loader from '../common/Loader';
+import PeriodLoader from '../common/PeriodLoader';
 
 export default class DonateForm extends Component {
   state = {
       name: '',
       description: '',
-      recipient: '',
       value: '',
       loading: false,
       errorMessage: ''
@@ -22,7 +21,12 @@ export default class DonateForm extends Component {
   onDonateMessageSend = async event => {
     event.preventDefault();
     const { description, name, value } = this.state;
-  
+    if(this.state.value === '' || this.state.value === 0) {
+      return this.setState({ errorMessage: "You didn't put in an amount!!"});
+     }
+     if(this.state.value === '' && this.state.description === '' && this.state.name === '') {
+      return this.setState({ errorMessage: "Empty fields"});
+     }
     this.setState({ 
       loading: true,
       errorMessage: ''
@@ -37,10 +41,12 @@ export default class DonateForm extends Component {
   } catch(err) {
     console.log(err.message);
     if(err.message.replace(/ .*/,'') === 'while') {
-      this.setState({ errorMessage: "Numbers are only allowed"});
-    } 
-    if(err.message.replace(/ .*/,'') === 'Returned') {
-      this.setState({ errorMessage: "Oops you rejected it! Did you mean to do that?"});
+      return this.setState({ errorMessage: "Numbers are only allowed", value: '',loading: false});
+    } else if(err.message.replace(/ .*/,'') === 'Returned') {
+      return this.setState({ errorMessage: "Oops you rejected it! Did you mean to do that?", value: '', loading: false});
+    }
+    if(err.message.replace(/ .*/,'') === 'No') {
+      return this.setState({ errorMessage: "Oops! You're probably not logged in MetaMask", value: '', loading: false});
     }
   }
   this.setState({ loading: false, value: '', name: '', description: '' });
@@ -53,40 +59,39 @@ export default class DonateForm extends Component {
 
     return (
 <div className='modal-background'>
-<div className='form-background'>
-<div className='form-header'>Help Our Communities Grow</div>
-<div className={ this.state.loading === true ? 'loading-form' : 'hide'}>
-  <Loader />
-  </div>
-  <div className={ this.state.loading === true ? 'hide' : 'flex-forms' }>
-
-    <div className='form-align'>
+  <div className='form-background'>
+  { this.state.loading===true ? <div className='form-header'>The nodes are now noding</div> : <div className='form-header'>Help Our Communities Grow</div> }
+    <div onClick={ (e)=> {this.onClose(e)} } className='modal-close'>x</div>
+    <div className={ this.state.loading===true ? 'loading-form' : 'hide'}>
+        <PeriodLoader />
     </div>
-    <div className='form-caption'>Name</div>
-    <input 
-    maxLength="24"
-    value={ this.state.name } 
-    onChange={ event=> this.setState({ name: event.target.value })}
-    ></input>
-    <div className='form-caption'>Message</div>
-    <input 
-    maxLength="180"
-    value={ this.state.description } 
-    onChange={ event=> this.setState({ description: event.target.value })}
-    ></input>
-    <div className='form-caption'>Amount of Eth</div>
-    <input 
-    value={ this.state.value } 
-    onChange={ event=> this.setState({ value: event.target.value })}
-    ></input>
-    <div className={this.state.errorMessage ? 'error-message' : 'empty'}>{ this.state.errorMessage }</div>
-    <button 
-    type='button' 
-    className='donate-button'
-    onClick={ this.onDonateMessageSend }
-    >DONATE</button>
+    <div className={ this.state.loading===true ? 'hide' : 'flex-forms' }>
+      <div className='form-align'>
+      </div>
+      <div className='form-caption'>Name</div>
+      <input 
+      type={ this.state.errorMessage === "Empty fields" ? 'text' : '' }
+      maxLength="24" 
+      value={ this.state.name } 
+      onChange={ event=> this.setState({ name: event.target.value })} >
+      </input>
+      <div className='form-caption'>Message</div>
+      <input 
+      type={ this.state.errorMessage === "Empty fields" ? 'text' : '' }
+      maxLength="180" 
+      value={ this.state.description } 
+      onChange={ event=> this.setState({ description: event.target.value })} >
+      </input>
+      <div className='form-caption'>Amount of Eth</div>
+      <input
+      type={ this.state.errorMessage ? 'text' : '' }
+       value={ this.state.value } 
+       onChange={ event=> this.setState({ value: event.target.value })} >
+      </input>
+      <div className={this.state.errorMessage ? 'error-message' : 'empty'}>{ this.state.errorMessage }</div>
+      <button type='button' className='donate-button' onClick={ this.onDonateMessageSend }>DONATE</button>
+    </div>
   </div>
-</div>
 </div>
     )
   }

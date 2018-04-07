@@ -1,8 +1,66 @@
+@keyframes subtleFade {
+  from {
+      top: -300px;
+      opacity: 0;
+  }
+  to {
+      top: 0px;
+      opacity: 1;
+  }
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes grow-left {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #b2bec3;
+  font-size: 16px;
+  transition: 0.5s;
+  font-weight: 600;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #b2bec3;
+  font-size: 16px;
+  transition: 0.5s;
+  font-weight: 600;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #b2bec3;
+  font-size: 16px;
+  transition: 0.5s;
+  font-weight: 600;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #b2bec3;
+  font-size: 16px;
+  transition: 0.5s;
+  font-weight: 600;
+}
+
+
+
 .form-background {
   background: white;
   /* margin-top: 110px;
   margin-bottom: 110px; */
-  height: 550px;
+  height: 600px;
   width: 450px;
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -10,6 +68,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
 }
 
 .flex-forms {
@@ -26,9 +85,10 @@
   -moz-transition: all 0.30s ease-in-out;
   -ms-transition: all 0.30s ease-in-out;
   -o-transition: all 0.30s ease-in-out;
-  font-family: 'Lato', sans-serif;
+  font-family: FontAwesome, 'Lato', sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 20px;
+  text-decoration: inherit;
   margin-bottom: 25px;
   margin-top: 5px;
   height: 45px;
@@ -36,7 +96,12 @@
   background-color: #ffffff;
   outline: none;
   border: 1px solid #ccc;
+  padding:10px;
   padding-left: 20px;
+}
+
+input[type='text'] {
+  border: 2px solid rgb(249, 81, 81);
 }
 
 .flex-forms input:focus {
@@ -77,8 +142,9 @@
   font-size: 36px;
   font-weight: 900;
   padding: 20px;
+  padding-bottom: 10px;
   padding-left: 50px;
-  padding-top: 35px;
+  padding-top: 45px;
 }
 
 .error-message {
@@ -103,39 +169,18 @@
   background: rgba(0, 0, 0, 0.50);
 }
 
+.modal-close {
+  color: rgba(0, 0, 0, 0.9);
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  z-index: 1;
+  position: absolute;
+  top: 3%;
+  left: 86%;
+  cursor: pointer;
+}
+
 .hide {
   display: none;
-}
-
-
-
-
-
-
-
-
-
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #b2bec3;
-  font-size: 16px;
-  transition: 0.5s;
-  font-weight: 600;
-}
-::-moz-placeholder { /* Firefox 19+ */
-  color: #b2bec3;
-  font-size: 16px;
-  transition: 0.5s;
-  font-weight: 600;
-}
-:-ms-input-placeholder { /* IE 10+ */
-  color: #b2bec3;
-  font-size: 16px;
-  transition: 0.5s;
-  font-weight: 600;
-}
-:-moz-placeholder { /* Firefox 18- */
-  color: #b2bec3;
-  font-size: 16px;
-  transition: 0.5s;
-  font-weight: 600;
 }

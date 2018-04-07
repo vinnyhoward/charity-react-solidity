@@ -28,10 +28,10 @@
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
-  -webkit-animation-name: subtleFade;
+  /* -webkit-animation-name: subtleFade;
   -webkit-animation-duration: 0.55s;
   animation-name: subtleFade;
-  animation-duration: 0.55s;
+  animation-duration: 0.55s; */
   font-family: 'Open Sans', sans-serif;
 }
 

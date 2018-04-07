@@ -1,0 +1,54 @@
+.spinner {
+  width: 100px;
+  height: 100px;
+  background: #eee;
+  border-radius: 50%;
+  position: relative;
+  margin: 50px;
+  display: inline-block;
+
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 33%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner-5 {
+  width: 0px;
+  height: 0px;
+}
+
+.spinner-5 span {
+  display: block;
+  height: 50px;
+  width: 50px;
+  background: #ddd;
+  border-radius: 50%;
+  position: absolute;
+  top: 0px;
+
+}
+
+.spinner-5 span:nth-child(1) {
+  left: -80px;
+  animation: bounce 1s ease-in-out infinite;
+  }
+
+.spinner-5 span:nth-child(2) {
+  animation: bounce 1s ease-in-out 0.22s infinite;
+  }
+
+.spinner-5 span:nth-child(3) {
+  left: 80px;
+  animation: bounce 1s ease-in-out 0.55s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 75%, 100% {
+      transform: translateY(0px);
+    }
+    25% {
+      transform: translateY(-50px);
+    }
+  }
