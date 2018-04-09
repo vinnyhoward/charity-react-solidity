@@ -68,14 +68,14 @@ export default class DonateForm extends Component {
     <div className={ this.state.loading===true ? 'hide' : 'flex-forms' }>
       <div className='form-align'>
       </div>
-      <div className='form-caption'>Name</div>
+      <div className='form-caption'>Your name</div>
       <input 
       type={ this.state.errorMessage === "Empty fields" ? 'text' : '' }
       maxLength="24" 
       value={ this.state.name } 
       onChange={ event=> this.setState({ name: event.target.value })} >
       </input>
-      <div className='form-caption'>Message</div>
+      <div className='form-caption'>Your Message</div>
       <input 
       type={ this.state.errorMessage === "Empty fields" ? 'text' : '' }
       maxLength="180" 

@@ -1,17 +1,18 @@
 .nav-background {
   /* background: linear-gradient(to bottom right, #6c5ce7, #a29bfe,  #a29bfe); */
-  /* background: white; */
+  background: white;
   height: 75px;
-  color: #fdfdfd;
-  /* box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1); */
+  color: rgba(0, 0, 0, 0.90);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 2;
 }
 
 .nav-container {
   padding-top: 20px;
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -50,5 +51,5 @@
   padding-left: 12.5px;
   padding-right: 12.5px;
   cursor: pointer;
-  color: #ffffff;
+  color: rgba(0, 0, 0, 0.90);
 }

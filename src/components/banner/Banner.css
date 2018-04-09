@@ -1,11 +1,46 @@
 .banner-background {
-    background: linear-gradient(to bottom right, #75e3e3,  #06dad6, #06d4d0);
-    height: 820px;
+    /* position: relative; */
+    background: linear-gradient(90deg, #c002f0, #75489f);
+    height: 900px;
     color: #ffffff;
+    width: 100%;
+    min-height: 750px;
 }
 
-.column-half {
-  width: 50%
+.banner-background:before {
+  /* position: relative; */
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 260px;
+  background: url('../../images/wave.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+
+
+.column__one-third {
+  margin-top: 50px;
+  width: 33.33%;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	/* justify-content: center; */
+	/* align-items: center;
+	align-content: center; */
+}
+
+.column__two-third {
+  width: 66.66%;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	/* justify-content: center; */
+	/* align-items: center;
+	align-content: center; */
 }
 
 .banner-flex {
@@ -27,4 +62,79 @@
   letter-spacing: 1px;
   padding-top: 25px;
   padding-bottom: 25px;
+}
+
+.donate-button__banner {
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  width: 375px;
+  height: 60px;
+  background-color: #00cec9;
+  border: none;
+  outline: none;
+  color: white;
+  transition: 0.5s;
+  letter-spacing: 2px;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 1px 1px 10px #00cecb47;
+}
+
+.info-button__banner {
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  width: 375px;
+  height: 60px;
+  background-color: #f78989;
+  border: none;
+  outline: none;
+  color: white;
+  transition: 0.5s;
+  letter-spacing: 2px;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 1px 1px 10px #f789893e;
+  margin-top: 20px;
+}
+
+
+.iphonex-asset {
+  z-index: 0;
+  height: 485px;
+  margin-top: 150px;
+  margin-bottom: 50px;
+  animation: bouncePhone 2s ease-in-out infinite;
+}
+
+.banner-header {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 65px;
+  font-weight: 700;
+  padding-bottom: 30px;
+  line-height: 65px;
+}
+
+.banner-caption__description-amount {
+  font-family: 'Source Serif Pro', serif;
+  font-weight: 400;
+  font-size: 20px;
+  padding-bottom: 30px;
+}
+
+.banner-caption__description-amount span {
+  font-family: 'Source Serif Pro', serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+@keyframes bouncePhone {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  70% {
+    transform: translateY(-20px);
+  }
 }
