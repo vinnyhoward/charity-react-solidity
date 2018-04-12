@@ -13,6 +13,7 @@ contract CharityFactory {
     }
 }
 
+
 contract Charity{
   event CharityEvent(
     address _from,
@@ -31,10 +32,18 @@ address public organization;
 Donator[] public donators;
 uint public charityCount;
 
-   function Charity( address creator) public {
-      organization = creator;
+     function Charity( address creator) public {
+          organization = creator;
     }
   
+     function getSummary() public view returns ( uint, uint, uint ) {
+          return (
+              this.balance,
+              donators.length,
+              charityCount
+          );
+      }
+
     function contributeMessage(string message, string username, uint value) public payable {
       charityCount++;
       

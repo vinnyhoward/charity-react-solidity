@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NavigationBar from './components/navigation/NavigationBar';
 import Banner from './components/banner/Banner';
 import Layout from './components/layout/Layout';
-import MessageList from './components/messages/MessageList';
+import MessageListContainer from './components/messages/MessageListContainer';
 import './App.css';
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
       <Banner />
   <div className='main'>
     <div className='squeeze'>
-    <MessageList />
+    <MessageListContainer />
     </div>
   </div>
 </Layout>
