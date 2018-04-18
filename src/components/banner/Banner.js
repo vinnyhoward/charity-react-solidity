@@ -21,7 +21,7 @@ export default class Banner extends Component {
         donatorsCount: summary[1],
         charityCount: summary[2]
       })
-      console.log(summary);
+      // console.log(summary);
   }
 
   clickOpenModal = () => {
@@ -47,8 +47,8 @@ export default class Banner extends Component {
             {/*
             <div className='banner-caption'>Join the cause and help others in need</div> */}
             <div className='banner-header'>Help rebuild communities in need</div>
-            <div className='banner-caption__description-amount'>Our goal is to help impoverished communities. So far
-              <span> { web3.utils.fromWei(this.state.balance, 'ether') } ETH</span> was raised thanks to you!</div>
+            <div className='banner-caption__description-amount'>Our goal is to help impoverished communities. So far { this.state.charityCount } people helped raise
+              <span> { web3.utils.fromWei(this.state.balance, 'ether') } ETH</span>!</div>
             <button className='donate-button__banner' onClick={ ()=> this.clickOpenModal() } >Contribute
             </button>
 

@@ -47,7 +47,7 @@
 	align-items: baseline;
 }
 
-.nav-flex-right a {
+.nav-flex-right div {
   padding-left: 12.5px;
   padding-right: 12.5px;
   cursor: pointer;

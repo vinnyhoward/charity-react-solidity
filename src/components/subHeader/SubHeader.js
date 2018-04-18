@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './SubHeader.css';
-import iphoneX from '../../images/Asset2@2x.png';
+// import iphoneX from '../../images/Asset2@2x.png';
 
 
 const SubHeader = () => {

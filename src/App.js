@@ -15,9 +15,9 @@ class App extends Component {
   <div className='main'>
     <div className='squeeze'>
     <div className='sub-container-flex'>
-    {/* <SubHeader/>
     <SubHeader/>
-    <SubHeader/> */}
+    <SubHeader/>
+    <SubHeader/>
     </div>
     <div className='message-section-title'>Donators</div>
     <div className='message-flex'>
