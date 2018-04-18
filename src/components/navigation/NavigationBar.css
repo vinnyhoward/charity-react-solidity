@@ -1,11 +1,11 @@
 .nav-background {
   /* background: linear-gradient(to bottom right, #6c5ce7, #a29bfe,  #a29bfe); */
-  background: white;
-  height: 75px;
-  color: rgba(0, 0, 0, 0.90);
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  /* background: white; */
+  height: 5px;
+  color: rgba(255, 255, 255, 0.9);
+  /* box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1); */
   position: fixed;
-  top: 0;
+  top: 10;
   width: 100%;
   z-index: 2;
 }
@@ -51,5 +51,5 @@
   padding-left: 12.5px;
   padding-right: 12.5px;
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.90);
+  color: rgba(255, 255, 255, 0.9);
 }

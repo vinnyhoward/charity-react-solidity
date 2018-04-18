@@ -82,14 +82,14 @@ export default class DonateForm extends Component {
       value={ this.state.description } 
       onChange={ event=> this.setState({ description: event.target.value })} >
       </input>
-      <div className='form-caption'>Amount of Eth</div>
+      <div className='form-caption'>Amount of ETH</div>
       <input
       type={ this.state.errorMessage ? 'text' : '' }
        value={ this.state.value } 
        onChange={ event=> this.setState({ value: event.target.value })} >
       </input>
       <div className={this.state.errorMessage ? 'error-message' : 'empty'}>{ this.state.errorMessage }</div>
-      <button type='button' className='donate-button' onClick={ this.onDonateMessageSend }>DONATE</button>
+      <button type='button' className='donate-button' onClick={ this.onDonateMessageSend }>Donate</button>
     </div>
   </div>
 </div>

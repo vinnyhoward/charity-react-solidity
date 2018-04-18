@@ -1,0 +1,29 @@
+.sub-container {
+  height: 400px;
+  width: 350px;
+  margin: 25px;
+  margin-bottom: 125px;
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.25);
+}
+
+.secondary-asset {
+  z-index: 1;
+  width: 360px;
+  margin-right: 60px;
+  animation: bounceAsset 2s ease-in-out infinite;
+  top: 60px;
+  position: absolute;
+  top: 900px;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes bounceAsset {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  70% {
+    transform: translateY(-20px);
+  }
+}

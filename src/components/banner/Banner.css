@@ -1,16 +1,26 @@
 .banner-background {
     /* position: relative; */
     background: linear-gradient(90deg, #c002f0, #75489f);
-    height: 900px;
+    height: 800px;
     color: #ffffff;
     width: 100%;
     min-height: 750px;
+
+
 }
 
-.banner-background:before {
-  /* position: relative; */
+.main-banner {
+  width: 100%;
+  height: 100%;
+  padding: 85px 20px;
+  padding-bottom: 200px;
+}
+
+/* .banner-background:before {
+  z-index: 0;
   content: '';
   position: absolute;
+  top: 550px;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -19,13 +29,14 @@
   background-size: cover;
   background-repeat: no-repeat;
   
-}
+} */
 .column__one-third {
   margin-top: 50px;
   width: 33.33%;
   display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
 	/* justify-content: center; */
 	/* align-items: center;
 	align-content: center; */
@@ -49,6 +60,7 @@
 	align-items: center;
 	align-content: center;
   margin: 0;
+  margin-bottom: 20px;
 }
 
 .banner-caption {
@@ -63,15 +75,16 @@
 }
 
 .donate-button__banner {
+  z-index: 1;
   font-family: 'Lato', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
   width: 375px;
   height: 60px;
-  background-color: #00cec9;
+  background-color: white;
   border: none;
   outline: none;
-  color: white;
+  color: #75489f;
   transition: 0.5s;
   letter-spacing: 2px;
   border-radius: 2px;
@@ -80,6 +93,7 @@
 }
 
 .info-button__banner {
+  z-index: 1;
   font-family: 'Lato', sans-serif;
   font-weight: 600;
   font-size: 16px;
@@ -93,41 +107,66 @@
   letter-spacing: 2px;
   border-radius: 2px;
   cursor: pointer;
-  box-shadow: 1px 1px 10px #f789893e;
+  box-shadow: 1px 1px 10px #f789893b;
   margin-top: 20px;
 }
 
 
 .iphonex-asset {
   z-index: 0;
-  height: 485px;
-  margin-top: 150px;
+  height: 610px;
+  margin-left: 25px;
+  margin-top: 50px;
   margin-bottom: 50px;
   animation: bouncePhone 2s ease-in-out infinite;
 }
 
 .banner-header {
-  font-family: 'Source Serif Pro', serif;
-  font-size: 65px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 70px;
   font-weight: 700;
   padding-bottom: 30px;
-  line-height: 65px;
+  line-height: 60px;
+  color: white;
 }
 
 .banner-caption__description-amount {
-  font-family: 'Source Serif Pro', serif;
-  font-weight: 400;
+  /* font-family: 'Source Serif Pro', serif; */
+  font-weight: 600;
   font-size: 20px;
   padding-bottom: 30px;
+  /* color: #5d3a7e */
 }
 
 .banner-caption__description-amount span {
-  font-family: 'Source Serif Pro', serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 20px;
-  color: #ffffff;
 }
 
+#waves path {
+  fill: #f6f8fd;
+}
+
+.wavy-section {
+  width: 100%;
+  height: 100%;
+  color: rgba(255, 255, 255, 0);
+  background:none;
+  overflow: hidden;
+}
+
+ #waves {
+  position: absolute;
+  bottom: 230px;
+  width: 100%;
+} 
+
+/* #waves {
+  position: relative;
+  bottom: -810px;
+  margin-top: -810px;
+  width: 100%;
+} */
 @keyframes bouncePhone {
   0%, 100% {
     transform: translateY(0px);
@@ -136,3 +175,346 @@
     transform: translateY(-20px);
   }
 }
+
+@media (max-width: 1250px) {
+  .iphonex-asset {
+    z-index: 0;
+    height: 510px;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    animation: bouncePhone 2s ease-in-out infinite;
+  }
+  .banner-background {
+    /* position: relative; */
+    background: linear-gradient(90deg, #c002f0, #75489f);
+    height: 600px;
+    color: #ffffff;
+    width: 100%;
+    min-height: 750px;
+}
+#waves {
+  position: absolute;
+  bottom: 300px;
+  width: 100%;
+}
+  
+}
+
+@media (max-width: 816px) {
+    .iphonex-asset {
+      z-index: 0;
+      height: 410px;
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      animation: bouncePhone 2s ease-in-out infinite;
+    }
+
+  .banner-flex {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .banner-background {
+    /* position: relative; */
+    background: linear-gradient(90deg, #c002f0, #75489f);
+    height: 1400px;
+    color: #ffffff;
+    width: 100%;
+    min-height: 750px;
+}
+#waves {
+  position: absolute;
+  bottom: -350px;
+  width: 100%;
+}
+
+.column__one-third {
+  margin-top: 50px;
+  width: 50%;
+  display: flex;
+	flex-direction: column;
+  flex-wrap: wrap;
+  /* margin-bottom: 100px; */
+	/* justify-content: center; */
+	/* align-items: center;
+	align-content: center; */
+}
+
+.column__two-third {
+  width: 76%;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	/* justify-content: center; */
+	/* align-items: center;
+	align-content: center; */
+}
+
+.banner-caption__description-amount {
+  /* font-family: 'Source Serif Pro', serif; */
+  margin-top: 1px;
+  font-weight: 600;
+  font-size: 20px;
+  padding-bottom: 30px;
+  margin-top: 30px;
+  /* color: #5d3a7e */
+}
+}
+
+@media (max-width: 660px) {
+  .iphonex-asset {
+    z-index: 0;
+    height: 360px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    animation: bouncePhone 2s ease-in-out infinite;
+  }
+  .column__two-third {
+    width: 76%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* align-items: center;
+    align-content: center; */
+  }
+
+.banner-caption__description-amount {
+  /* font-family: 'Source Serif Pro', serif; */
+  margin-top: 50px;
+  /* color: #5d3a7e */
+}
+  
+}
+
+@media (max-width: 600px) {
+  .iphonex-asset {
+    z-index: 0;
+    height: 300px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    animation: bouncePhone 2s ease-in-out infinite;
+  }
+  .column__two-third {
+    width: 76%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* align-items: center;
+    align-content: center; */
+  }
+.column__one-third {
+  margin-top: 50px;
+  width: 70%;
+  display: flex;
+	flex-direction: column;
+  flex-wrap: wrap;
+  /* margin-bottom: 100px; */
+	/* justify-content: center; */
+	/* align-items: center;
+	align-content: center; */
+}
+
+.banner-caption__description-amount {
+  /* font-family: 'Source Serif Pro', serif; */
+  margin-top: 50px;
+  /* color: #5d3a7e */
+}
+  
+}
+
+@media (max-width: 600px) {
+  .iphonex-asset {
+    z-index: 0;
+    height: 300px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    animation: bouncePhone 2s ease-in-out infinite;
+  }
+  .column__two-third {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* align-items: center;
+    align-content: center; */
+  }
+.column__one-third {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+	flex-direction: column;
+  flex-wrap: wrap;
+  /* margin-bottom: 100px; */
+	/* justify-content: center; */
+	/* align-items: center;
+	align-content: center; */
+}
+
+.banner-header {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  padding-bottom: 10px;
+  line-height: 60px;
+  color: white;
+}
+
+.banner-caption__description-amount {
+  /* font-family: 'Source Serif Pro', serif; */
+  font-weight: 600;
+  font-size: 16px;
+  padding-bottom: 30px;
+  margin-top: 10px;
+  /* color: #5d3a7e */
+}
+
+.donate-button__banner {
+  font-size: 16px;
+  width: 100%;
+}
+
+.info-button__banner {
+  width: 100%;
+}
+
+
+.banner-background {
+  /* position: relative; */
+  background: linear-gradient(90deg, #c002f0, #75489f);
+  height: 1000px;
+  color: #ffffff;
+  width: 100%;
+  min-height: 750px;
+}
+#waves {
+  position: absolute;
+  bottom: -65px;
+  width: 100%;
+}
+.banner-background {
+  /* position: relative; */
+  background: linear-gradient(90deg, #c002f0, #75489f);
+  height: 1000px;
+  color: #ffffff;
+  width: 100%;
+  min-height: 750px;
+}
+#waves {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+}
+}
+
+@media (max-width: 530px) {
+  .iphonex-asset {
+    z-index: 0;
+    height: 300px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    animation: bouncePhone 2s ease-in-out infinite;
+  }
+  .column__two-third {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* align-items: center;
+    align-content: center; */
+  }
+.column__one-third {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+	flex-direction: column;
+  flex-wrap: wrap;
+  /* margin-bottom: 100px; */
+	/* justify-content: center; */
+	/* align-items: center;
+	align-content: center; */
+}
+
+}
+
+@media (max-width: 660px) {
+  .iphonex-asset {
+    z-index: 0;
+    height: 360px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    animation: bouncePhone 2s ease-in-out infinite;
+  }
+  .column__two-third {
+    width: 76%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* align-items: center;
+    align-content: center; */
+  }
+
+.banner-caption__description-amount {
+  /* font-family: 'Source Serif Pro', serif; */
+  margin-top: 50px;
+  /* color: #5d3a7e */
+}
+  
+}
+
+@media (max-width: 450px) {
+  .iphonex-asset {
+    z-index: 0;
+    height: 150px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    animation: bouncePhone 2s ease-in-out infinite;
+  }
+  .column__two-third {
+    width: 76%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* align-items: center;
+    align-content: center; */
+  }
+.column__one-third {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+	flex-direction: column;
+  flex-wrap: wrap;
+  /* margin-bottom: 100px; */
+	/* justify-content: center; */
+	/* align-items: center;
+	align-content: center; */
+}
+
+.banner-caption__description-amount {
+  /* font-family: 'Source Serif Pro', serif; */
+  margin-top: 50px;
+  /* color: #5d3a7e */
+}
+
+  
+}
+
