@@ -1,11 +1,11 @@
 .nav-background {
   /* background: linear-gradient(to bottom right, #6c5ce7, #a29bfe,  #a29bfe); */
   /* background: white; */
-  height: 5px;
+  height: 0px;
   color: rgba(255, 255, 255, 0.9);
   /* box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1); */
-  position: fixed;
-  top: 10;
+  /* position: fixed; */
+  /* top: 10; */
   width: 100%;
   z-index: 2;
 }

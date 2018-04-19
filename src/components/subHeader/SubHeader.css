@@ -81,3 +81,27 @@
     transform: translateY(-20px);
   }
 }
+
+
+@media (max-width: 550px) {
+  .sub-container {
+    height: 275px;
+    width: 350px;
+    margin: 25px;
+    margin-bottom: 250px;
+    /* background-color: #f8f9fc;
+    border-radius: 5px;
+    box-shadow: 1px 5px 20px #2c1b3b21; */
+  }
+  .secondary-asset {
+    z-index: 1;
+    width: 200px;
+    margin-left: 45px;
+    position: relative;
+    transform: translate(-50%, -50%);
+  }
+  .sub-header__padding{
+    padding: 10px;
+  }
+  
+}
