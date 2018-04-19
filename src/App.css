@@ -36,11 +36,15 @@
   animation-duration: 0.55s; */
   font-family: 'Open Sans', sans-serif;
 }
+/* 
+*:focus {
+  outline: none;
+} */
 
 .main {
   width: 100%;
   height: 100%;
-  padding: 85px 20px;
+  padding: 150px 20px;
   padding-bottom: 200px;
   background: #f6f8fd;
 }
@@ -82,4 +86,13 @@
   padding-bottom: 30px;
   font-weight: 700;
   color: #75489f;  
+}
+
+.message-flex {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+  align-content: center;
 }

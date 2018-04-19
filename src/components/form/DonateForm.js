@@ -27,12 +27,12 @@ export default class DonateForm extends Component {
      if(this.state.value === '' && this.state.description === '' && this.state.name === '') {
       return this.setState({ errorMessage: "Empty fields"});
      }
+  try {
+    const accounts = await web3.eth.getAccounts();
     this.setState({ 
       loading: true,
       errorMessage: ''
     });
-  try {
-    const accounts = await web3.eth.getAccounts();
     await charity.methods.contributeMessage( description, name, web3.utils.toWei( value, 'ether' ) )
     .send({ 
       from: accounts[0],
@@ -49,6 +49,7 @@ export default class DonateForm extends Component {
       return this.setState({ errorMessage: "Oops! You're probably not logged in MetaMask", value: '', loading: false});
     }
   }
+  window.location.reload();
   this.setState({ loading: false, value: '', name: '', description: '' });
   }
 
@@ -60,7 +61,8 @@ export default class DonateForm extends Component {
     return (
 <div className='modal-background'>
   <div className='form-background'>
-  { this.state.loading===true ? <div className='form-header'>The nodes are now noding</div> : <div className='form-header'>Help Our Communities Grow</div> }
+  { this.state.loading===true ? <div className='form-header'>The nodes are now noding</div> : <div className='form-header'>Help Our Communities <br/>Grow</div> }
+
     <div onClick={ (e)=> {this.onClose(e)} } className='modal-close'>x</div>
     <div className={ this.state.loading===true ? 'loading-form' : 'hide'}>
         <PeriodLoader />
@@ -68,21 +70,22 @@ export default class DonateForm extends Component {
     <div className={ this.state.loading===true ? 'hide' : 'flex-forms' }>
       <div className='form-align'>
       </div>
-      <div className='form-caption'>Your name</div>
+      {/* <hr className='horizontal-line' /> */}
+      <div className='form-caption'>Name</div>
       <input 
       type={ this.state.errorMessage === "Empty fields" ? 'text' : '' }
       maxLength="24" 
       value={ this.state.name } 
       onChange={ event=> this.setState({ name: event.target.value })} >
       </input>
-      <div className='form-caption'>Your Message</div>
+      <div className='form-caption'>Message</div>
       <input 
       type={ this.state.errorMessage === "Empty fields" ? 'text' : '' }
       maxLength="180" 
       value={ this.state.description } 
       onChange={ event=> this.setState({ description: event.target.value })} >
       </input>
-      <div className='form-caption'>Amount of ETH</div>
+      <div className='form-caption'>Amount of eth</div>
       <input
       type={ this.state.errorMessage ? 'text' : '' }
        value={ this.state.value } 

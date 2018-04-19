@@ -62,7 +62,7 @@
   background: white;
   /* margin-top: 110px;
   margin-bottom: 110px; */
-  height: 600px;
+  height: 675px;
   width: 450px;
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
   z-index: 5;
@@ -70,7 +70,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 2px;
+  border-radius: 5px;
   animation: fade-in-right ease-in-out 0.2s forwards;
 
 }
@@ -94,22 +94,24 @@
   font-size: 20px;
   text-decoration: inherit;
   margin-bottom: 25px;
-  margin-top: 5px;
+  margin-top: 10px;
   height: 45px;
   width: 350px;
   background-color: #ffffff;
   outline: none;
-  border: 1px solid #ccc;
+  border: none;
+  border-bottom: 2px solid rgb(224, 224, 224);
+  /* border-radius: 5px; */
   padding:10px;
   padding-left: 20px;
 }
 
 input[type='text'] {
-  border: 2px solid rgb(249, 81, 81);
+  border-bottom: 2px solid rgb(249, 81, 81);
 }
 
 .flex-forms input:focus {
-  border: 3px solid #c0dfef;
+  border-bottom: 2px solid rgb(224, 224, 224);
 }
 
 .donate-button {
@@ -126,14 +128,14 @@ input[type='text'] {
   letter-spacing: 2px;
   border-radius: 2px;
   cursor: pointer;
-  box-shadow: 1px 1px 10px #f789893b;
+  box-shadow: 1px 1px 10px #f789897f;
 }
 
 .form-caption {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.9);
-  font-size: 14px;
+  color: rgba(0, 0, 0, 0.60);
+  font-size: 16px;
   transition: 0.5s;
   font-weight: 700;
   letter-spacing: 1px;
@@ -144,12 +146,13 @@ input[type='text'] {
 .form-header {
   color: rgba(0, 0, 0, 0.75);
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 36px;
+  font-size: 42px;
   font-weight: 700;
   padding: 20px;
   padding-bottom: 10px;
   padding-left: 50px;
-  padding-top: 45px;
+  padding-top: 55px;
+  margin-bottom: 10px;
 }
 
 .error-message {
@@ -188,4 +191,11 @@ input[type='text'] {
 
 .hide {
   display: none;
+}
+
+.horizontal-line {
+  background-color: #75489f;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

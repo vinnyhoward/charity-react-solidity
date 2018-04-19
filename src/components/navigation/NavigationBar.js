@@ -8,7 +8,7 @@ export default class NavigationBar extends Component {
   <div className='nav-container'>
     <div className='nav-flex'>
       <ul>
-        <li className='nav-title'>CHARITY</li>
+        <li className='nav-title'>IMPAV FOUNDATIONS</li>
       </ul>
       <div className='nav-align-right'>
         <div className='nav-flex-right'>
