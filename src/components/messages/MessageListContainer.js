@@ -25,7 +25,6 @@ componentDidMount = async event => {
 
 renderMessages = () => {
   return this.state.messageList.map((donation, index) => {
-    console.log(donation);
     return <MessageList
     key={index}
     donation={donation}

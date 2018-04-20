@@ -7,7 +7,6 @@
   width: 560px;
   margin: 20px;
   z-index: 1;
-
 }
 .message-line {
   background: linear-gradient(90deg, #c002f0, #75489f);
@@ -27,7 +26,7 @@
 }
 
 .message-padding {
-  padding: 30px;
+  padding: 20px;
 }
 
 .message-title {
