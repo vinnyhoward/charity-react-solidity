@@ -39,7 +39,7 @@ $ npm start
 # Project Summary
 This is a personal project aimed at educating and familiarizing myself with the Solidity language for smart contracts for the Ethereum blockchain, while interacting with the data with React.js.
 
-The smart contract allows users to donate to a charity which in this case, is a 'mock charity', and write an endearing message of their choice which will forever be on the block chain. 
+The smart contract allows users to donate to a charity, which in this case is a 'mock charity', and write an endearing message of their choice which will forever be on the block chain. 
 
 ## Features Include
 - User  can submit an amount of Eth 

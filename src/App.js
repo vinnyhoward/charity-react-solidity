@@ -36,7 +36,7 @@ class App extends Component {
     animation='slow'
     />
     </div>
-    <div className='message-section-title'>Donators</div>
+    <div className='message-section-title'>Donors</div>
     <div className='message-flex'>
     <MessageListContainer />
     {/* <div className='round-circle'></div> */}
