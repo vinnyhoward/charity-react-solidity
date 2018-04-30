@@ -323,10 +323,8 @@
   color: white;
 }
 #waves {
-  position: absolute;
-  bottom:-270px;
-  width: 100%;
-} 
+  display: none;
+  } 
 }
 
 @media (max-width: 500px) {
@@ -356,11 +354,6 @@
   font-size: 60px;
   font-weight: 700;
 }
-#waves {
-  position: absolute;
-  bottom:-270px;
-  width: 100%;
-} 
 }
 
 @media (max-width: 450px) {
@@ -391,9 +384,4 @@
   font-weight: 700;
   line-height: 45px;
 }
-#waves {
-  position: absolute;
-  bottom:-270px;
-  width: 100%;
-} 
 }
