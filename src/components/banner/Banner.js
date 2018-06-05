@@ -34,10 +34,6 @@ export default class Banner extends Component {
     // const { balance, donatorsCount, charityCount  } = this.props
      return (
 <div>
-  <svg id="waves" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 222.73">
-    <title>waves</title>
-    <path className="cls-1" d="M0,109S315,213,553,213,1191-21,1600,48V258H0Z" transform="translate(0 -35.27)" />
-  </svg>
   <div className='banner-background'>
     <DonateForm clickOpen={this.state.modalOpen} onClose={this.clickOpenModal} />
     <div className='main-banner'>

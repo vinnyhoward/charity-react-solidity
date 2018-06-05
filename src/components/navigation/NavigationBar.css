@@ -53,3 +53,23 @@
   cursor: pointer;
   color: rgba(255, 255, 255, 0.9);
 }
+
+@media (max-width: 1235px) {
+
+.nav-flex {
+  margin-left: 5px;
+}
+}
+
+@media (max-width: 825px) {
+.nav-flex-right {
+  display: none;
+}
+
+.nav-flex {
+  text-align: center;
+  display: block;
+  margin-left: 0;
+}
+
+}
